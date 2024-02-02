@@ -1,5 +1,6 @@
 package org.sopt;
 
+import org.sopt.builder.PersonBuilder;
 import org.sopt.classes.Member;
 import org.sopt.classes.Part;
 import org.sopt.classes.Person;
@@ -10,7 +11,12 @@ public class Main {
 
         //Person 클래스의 객체 생성
         Person person = new Person("도소현", 24, "female");
-
+        Person personWithBuilder = new
+                PersonBuilder()
+                .name("도소현")
+                .age(24)
+                .sex("female")
+                .build();
 
         //Person 클래스 내부 메소드 호출
         person.walk();
