@@ -1,0 +1,10 @@
+
+.DS_Store
+
+spring/src/main/resources/
+
+spring/.gradle/
+
+spring/.idea/
+
+spring/build/
