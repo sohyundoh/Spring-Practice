@@ -3,7 +3,7 @@ package org.sopt.practice.service;
 import lombok.RequiredArgsConstructor;
 import org.sopt.practice.domain.Member;
 import org.sopt.practice.domain.Part;
-import org.sopt.practice.dto.MemberCreateDto;
+import org.sopt.practice.dto.MemberCreateRequest;
 import org.sopt.practice.dto.MemberFindDto;
 import org.sopt.practice.dto.MemberListFindDto;
 import org.sopt.practice.exception.NotFoundException;
@@ -20,14 +20,14 @@ public class MemberService {
 
     @Transactional
     public void createMember(
-            MemberCreateDto memberCreate
+            MemberCreateRequest memberCreate
     ) {
         Member member = Member.create(memberCreate.name(), memberCreate.part(), memberCreate.age());
         memberRepository.save(member);
     }
 
 
-    private Member findMemberById(
+    public Member findMemberById(
             Long memberId
     ) {
         return memberRepository.findById(memberId).orElseThrow(

@@ -3,7 +3,7 @@ package org.sopt.practice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.sopt.practice.domain.Part;
-import org.sopt.practice.dto.MemberCreateDto;
+import org.sopt.practice.dto.MemberCreateRequest;
 import org.sopt.practice.dto.MemberFindDto;
 import org.sopt.practice.dto.MemberListFindDto;
 import org.sopt.practice.service.MemberService;
@@ -27,7 +27,7 @@ public class MemberController {
 
     @PostMapping
     public void postMember(
-            @RequestBody MemberCreateDto memberCreate
+            @RequestBody MemberCreateRequest memberCreate
     ) {
         memberService.createMember(memberCreate);
     }
